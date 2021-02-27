@@ -30,6 +30,14 @@ app.get("/contact", (req, res) => {
     res.render("contact", {msg: "Contact", contactContent: contactContent});
 });
 
+app.get("/compose", function (req, res) {
+    res.render('compose', {msg: "Compose"});
+});
+
+app.post("/compose", function (req, res) {
+    console.log(req.body.message);
+});
+
 app.listen(3000, () => {
     console.log("Server running @ port 3000...");
 });
