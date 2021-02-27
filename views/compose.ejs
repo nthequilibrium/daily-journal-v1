@@ -1,9 +1,18 @@
 <%- include('partials/header') -%>
 
-<h1><%= msg %> </h1>
+<h1><%= msg %></h1>
 <form action="/compose" method="POST">
-    <input type="text" name="message">
-    <button type="submit">Publish</button>
+  <div class="mb-3">
+    <label for="postTitle" class="form-label">Title</label>
+    <input type="text" class="form-control" name="postTitle" id="postTitle" />
+    <div class="form-text">Please enter a title for you post</div>
+  </div>
+  <div class="mb-3">
+    <label for="postBody" class="form-label">Post</label>
+    <textarea name="postBody" id="postBody" class="form-control" cols="30" rows="5"></textarea>
+    <div class="form-text">Please enter a your post</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Publish</button>
 </form>
 
 <%- include('partials/footer') %>
