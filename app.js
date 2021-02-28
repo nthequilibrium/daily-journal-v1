@@ -22,6 +22,15 @@ app.get("/", function (req, res) {
     res.render("home", {startingContent: homeStartingContent, blogPosts: posts});
 });
 
+app.get("/posts/:postName", function (req, res) {
+    for (let i = 0; i < posts.length; i++) {
+        if (req.params.postName === posts[i].title) {
+            console.log("Match found");
+            break;
+        }
+    }
+});
+
 app.get("/about", (req, res) => {
     res.render("about", {msg: "About", aboutContent: aboutContent});
 });
